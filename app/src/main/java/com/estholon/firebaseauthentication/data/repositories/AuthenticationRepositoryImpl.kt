@@ -19,6 +19,8 @@ import com.estholon.firebaseauthentication.domain.repositories.AuthenticationRep
 import com.facebook.AccessToken
 import com.google.firebase.auth.MultiFactorSession
 import com.google.firebase.auth.PhoneAuthProvider
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class AuthenticationRepositoryImpl @Inject constructor(
@@ -34,7 +36,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
     private val yahooAuthenticationDataSource: YahooAuthenticationDataSource,
     private val multifactorAuthenticationDataSource: MultifactorAuthenticationDataSource,
     private val userMapper: UserMapper
-): AuthenticationRepository {
+) : AuthenticationRepository {
 
     // GENERAL FUNCTIONS
 
@@ -53,12 +55,12 @@ class AuthenticationRepositoryImpl @Inject constructor(
     // EMAIL
 
     override suspend fun signUpEmail(email: String, password: String): Result<UserModel?> {
-        return emailAuthenticationDataSource.signUpEmail( email, password )
+        return emailAuthenticationDataSource.signUpEmail(email, password)
             .map { dto -> dto?.let { userMapper.userDtoToDomain(it) } }
     }
 
     override suspend fun signInEmail(email: String, password: String): Result<UserModel?> {
-        return emailAuthenticationDataSource.signInEmail( email, password )
+        return emailAuthenticationDataSource.signInEmail(email, password)
             .map { dto -> dto?.let { userMapper.userDtoToDomain(it) } }
     }
 
@@ -81,7 +83,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
         activity: Activity,
         callback: PhoneAuthProvider.OnVerificationStateChangedCallbacks
     ) {
-        phoneAuthenticationDataSource.signInPhone(phoneNumber,activity,callback)
+        phoneAuthenticationDataSource.signInPhone(phoneNumber, activity, callback)
     }
 
     override suspend fun verifyCode(
@@ -116,7 +118,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
 
     override suspend fun linkGoogle(activity: Activity): Result<UserModel?> {
         return googleAuthenticationDataSource.linkGoogle(activity)
-            .map { dto -> dto?.let{ userMapper.userDtoToDomain(it) } }
+            .map { dto -> dto?.let { userMapper.userDtoToDomain(it) } }
     }
 
     // FACEBOOK
@@ -181,7 +183,7 @@ class AuthenticationRepositoryImpl @Inject constructor(
 
     // RESET PASSWORD
 
-    override suspend fun resetPassword ( email : String) : Result<Unit> {
+    override suspend fun resetPassword(email: String): Result<Unit> {
         return emailAuthenticationDataSource.resetPassword(email)
     }
 
@@ -201,8 +203,13 @@ class AuthenticationRepositoryImpl @Inject constructor(
     override suspend fun verifySmsForEnroll(
         verificationId: String,
         verificationCode: String
-    ): Result<Unit> {
-        return multifactorAuthenticationDataSource.verifySmsForEnroll(verificationId, verificationCode)
+    ): Flow<Result<Unit>> = flow {
+        emit(
+            multifactorAuthenticationDataSource.verifySmsForEnroll(
+                verificationId,
+                verificationCode
+            )
+        )
     }
 
     // SIGN OUT
@@ -210,5 +217,4 @@ class AuthenticationRepositoryImpl @Inject constructor(
     override suspend fun signOut() {
         commonAuthenticationDataSource.signOut()
     }
-
 }

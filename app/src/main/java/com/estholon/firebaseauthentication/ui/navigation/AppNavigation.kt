@@ -3,13 +3,18 @@ package com.estholon.firebaseauthentication.ui.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.estholon.firebaseauthentication.ui.navigation.Routes.*
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.StartEnrollScreen
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.StartEnrollViewModel
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.models.StartEnrollEvent
+import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.VerifyOTPScreen
+import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.VerifyOTPViewModel
+import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.models.VerifyOTPEvent
 import com.estholon.firebaseauthentication.ui.screens.authentication.recover.RecoverScreen
 import com.estholon.firebaseauthentication.ui.screens.authentication.recover.RecoverViewModel
 import com.estholon.firebaseauthentication.ui.screens.authentication.signIn.SignInScreen
@@ -24,36 +29,36 @@ import com.estholon.firebaseauthentication.ui.screens.splash.SplashScreen
 import com.estholon.firebaseauthentication.ui.screens.splash.SplashViewModel
 
 @Composable
-fun AppNavigation(){
+fun AppNavigation() {
 
     val navController = rememberNavController()
 
     NavHost(
         navController = navController,
         startDestination = SplashScreen.route
-    ){
-        composable(SplashScreen.route){
-            val viewModel : SplashViewModel = hiltViewModel()
+    ) {
+        composable(SplashScreen.route) {
+            val viewModel: SplashViewModel = hiltViewModel()
             SplashScreen(
                 state = viewModel.state.collectAsState(),
                 onIntent = viewModel::dispatch,
                 navigateToHome = {
                     navController.popBackStack()
-                    navController.navigate(route=HomeScreen.route)
+                    navController.navigate(route = HomeScreen.route)
                 },
                 navigateToSignIn = {
                     navController.popBackStack()
-                    navController.navigate(route=SignInScreen.route)
+                    navController.navigate(route = SignInScreen.route)
                 }
             )
         }
-        composable(SignInScreen.route){
-            val viewModel : SignInViewModel = hiltViewModel()
+        composable(SignInScreen.route) {
+            val viewModel: SignInViewModel = hiltViewModel()
             SignInScreen(
                 state = viewModel.state.collectAsState(),
                 onIntent = viewModel::dispatch,
                 navigateToSignUp = { navController.navigate(route = SignUpScreen.route) },
-                navigateToRecover = { navController.navigate(route=RecoverScreen.route) },
+                navigateToRecover = { navController.navigate(route = RecoverScreen.route) },
                 navigateToVerificationEmail = {
                     navController.popBackStack()
                     navController.navigate(route = VerificationEmailScreen.route)
@@ -64,7 +69,7 @@ fun AppNavigation(){
                 }
             )
         }
-        composable(SignUpScreen.route){
+        composable(SignUpScreen.route) {
             val viewModel: SignUpViewModel = hiltViewModel()
             SignUpScreen(
                 state = viewModel.state.collectAsState(),
@@ -84,7 +89,7 @@ fun AppNavigation(){
             )
         }
 
-        composable(VerificationEmailScreen.route){
+        composable(VerificationEmailScreen.route) {
             val viewModel: VerificationEmailViewModel = hiltViewModel()
             VerificationEmailScreen(
                 state = viewModel.state.collectAsState(),
@@ -96,8 +101,13 @@ fun AppNavigation(){
             )
         }
 
-        composable(StartEnrollScreen.route){
+        composable(StartEnrollScreen.route) {
             val viewModel: StartEnrollViewModel = hiltViewModel()
+
+            viewModel.state.verificationId?.let { verificationId ->
+                navController.navigate(route = VerifyOTPScreen.routeWithArgs(verificationId))
+            }
+
             StartEnrollScreen(
                 state = viewModel.state,
                 sendOTP = { phoneNumber ->
@@ -109,7 +119,25 @@ fun AppNavigation(){
                 }
             )
         }
-        composable(RecoverScreen.route){
+        composable(
+            route = VerifyOTPScreen.fullRoute,
+            arguments = listOf(
+                navArgument(VerifyOTPScreen.verificationIdArg) { type = NavType.StringType }
+            )
+        ) { backStackEntry ->
+
+            val viewModel: VerifyOTPViewModel = hiltViewModel()
+            val verificationId =
+                backStackEntry.arguments?.getString(VerifyOTPScreen.verificationIdArg).orEmpty()
+
+            VerifyOTPScreen(
+                verifyOTP = { otpCode ->
+                    viewModel.dispatch(VerifyOTPEvent.VerifyOTP(verificationId, otpCode))
+                }
+            )
+        }
+
+        composable(RecoverScreen.route) {
             val viewModel: RecoverViewModel = hiltViewModel()
             RecoverScreen(
                 state = viewModel.state.collectAsState(),
@@ -120,7 +148,7 @@ fun AppNavigation(){
                 }
             )
         }
-        composable(HomeScreen.route){
+        composable(HomeScreen.route) {
             val viewModel: HomeViewModel = hiltViewModel()
             HomeScreen(
                 state = viewModel.state.collectAsState(),

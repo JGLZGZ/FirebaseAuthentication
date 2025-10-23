@@ -47,20 +47,20 @@ class StartEnrollViewModel @Inject constructor(
                 .catch { exception ->
                     state = state.copy(
                         error = exception.message,
-                        onSuccess = false
+                        verificationId = null
                     )
                 }
                 .collect{ result ->
                     result.fold(
                         onSuccess = {
                             state = state.copy(
-                                onSuccess = true
+                                verificationId = it
                             )
                         },
                         onFailure = { exception ->
                             state = state.copy(
                                 error = exception.message,
-                                onSuccess = false
+                                verificationId = null
                             )
                         }
                     )

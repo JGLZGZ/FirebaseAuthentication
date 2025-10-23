@@ -9,6 +9,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.MultiFactorSession
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.auth.User
+import kotlinx.coroutines.flow.Flow
 
 interface AuthenticationRepository {
 
@@ -75,5 +76,5 @@ interface AuthenticationRepository {
     suspend fun verifySmsForEnroll(
         verificationId: String,
         verificationCode: String
-    ) : Result<Unit>
+    ) : Flow<Result<Unit>>
 }

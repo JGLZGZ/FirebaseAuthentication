@@ -18,7 +18,7 @@ class CommonFirebaseAuthenticationDataSource @Inject constructor(
     override fun isUserLogged(): Result<Boolean> {
         return try {
             Result.success(getCurrentUser() != null)
-        } catch (e: Exception){
+        } catch (e: Exception) {
             Result.failure(e)
         }
     }
@@ -43,20 +43,17 @@ class CommonFirebaseAuthenticationDataSource @Inject constructor(
     }
 
     // EMAIL VERIFICATION
-
     override suspend fun sendEmailVerification(): Result<Unit> = runCatching {
         val user = firebaseAuth.currentUser ?: throw Exception("No hay usuario autenticado")
         user.sendEmailVerification().await()
     }
 
     // SIGN OUT OR LOGOUT
-
     override suspend fun signOut() {
         firebaseAuth.signOut()
         LoginManager.getInstance().logOut()
         googleAuthenticationDataSource.clearCredentialState()
     }
-
 
 
 }

@@ -1,13 +1,16 @@
-package com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment
+package com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.estholon.firebaseauthentication.domain.repositories.AuthenticationRepository
 import com.estholon.firebaseauthentication.domain.usecases.authentication.multifactor.StartEnrollPhoneUseCase
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.models.StartEnrollEvent
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.models.StartEnrollState
+import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.models.VerifyOTPEvent
+import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.models.VerifyOTPState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -18,26 +21,32 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class StartEnrollViewModel @Inject constructor(
-    private val startEnrollPhoneUseCase: StartEnrollPhoneUseCase
+class VerifyOTPViewModel @Inject constructor(
+    private val authenticationRepository: AuthenticationRepository,
 ) : ViewModel() {
 
     private var startEnrollJob: Job? = null
 
-    var state by mutableStateOf(StartEnrollState())
+    var state by mutableStateOf(VerifyOTPState())
         private set
 
-    fun dispatch(event: StartEnrollEvent){
-        when(event){
-            is StartEnrollEvent.ScreenOpened -> TODO()
-            is StartEnrollEvent.SendOTP -> sendOTP(phoneNumber = event.phoneNumber)
+    fun dispatch(event: VerifyOTPEvent) {
+        when (event) {
+            is VerifyOTPEvent.ScreenOpened -> TODO()
+            is VerifyOTPEvent.VerifyOTP -> verifyOTP(
+                verificationId = event.verificationId,
+                verificationCode = event.verificationCode
+            )
         }
     }
 
-    private fun sendOTP(phoneNumber: String) {
+    private fun verifyOTP(verificationId: String, verificationCode: String) {
         startEnrollJob?.cancelIfActive()
         startEnrollJob = viewModelScope.launch(Dispatchers.IO) {
-            startEnrollPhoneUseCase(phoneNumber = phoneNumber)
+            authenticationRepository.verifySmsForEnroll(
+                verificationId = verificationId,
+                verificationCode = verificationCode
+            )
                 .onStart {
                     state = state.copy(loading = true)
                 }
@@ -50,7 +59,7 @@ class StartEnrollViewModel @Inject constructor(
                         onSuccess = false
                     )
                 }
-                .collect{ result ->
+                .collect { result ->
                     result.fold(
                         onSuccess = {
                             state = state.copy(

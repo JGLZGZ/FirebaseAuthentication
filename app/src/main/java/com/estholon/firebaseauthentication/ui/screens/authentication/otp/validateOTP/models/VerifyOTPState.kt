@@ -1,6 +1,6 @@
-package com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.models
+package com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.models
 
-data class StartEnrollState (
+data class VerifyOTPState (
     val loading: Boolean = false,
     val error: String? = null,
     val onSuccess: Boolean = false

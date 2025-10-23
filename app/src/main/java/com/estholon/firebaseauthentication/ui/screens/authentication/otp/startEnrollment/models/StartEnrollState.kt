@@ -3,5 +3,5 @@ package com.estholon.firebaseauthentication.ui.screens.authentication.otp.startE
 data class StartEnrollState (
     val loading: Boolean = false,
     val error: String? = null,
-    val onSuccess: Boolean = false
+    val verificationId: String? = null
 )

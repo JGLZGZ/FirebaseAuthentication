@@ -1,0 +1,37 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color splash
+color white
+dimen fab_margin
+drawable firebase
+drawable ic_anonymously
+drawable ic_fb
+drawable ic_github
+drawable ic_google
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_microsoft
+drawable ic_phone
+drawable ic_twitter
+drawable ic_yahoo
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string com.google.firebase.crashlytics.mapping_file_id
+string default_web_client_id
+string facebook_app_id
+string facebook_client_token
+string fb_login_protocol_scheme
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+string next
+string previous
+string project_id
+style Base.Theme.FirebaseAuthentication
+style Theme.FirebaseAuthentication
+xml backup_rules
+xml data_extraction_rules

@@ -1,9 +1,9 @@
-package com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.models
+package com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.models
 
-sealed interface StartEnrollEvent {
+sealed interface VerifyOTPEvent {
 
-    data object ScreenOpened : StartEnrollEvent
+    data object ScreenOpened : VerifyOTPEvent
 
-    data class SendOTP(val phoneNumber: String) : StartEnrollEvent
+    data class VerifyOTP(val verificationId: String, val verificationCode: String) : VerifyOTPEvent
 
 }

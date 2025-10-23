@@ -1,0 +1,94 @@
+[
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_github.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_github.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_microsoft.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_microsoft.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_fb.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_fb.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_google.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_google.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_yahoo.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_yahoo.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_twitter.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_twitter.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/xml_backup_rules.xml.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/xml_data_extraction_rules.xml.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_phone.xml.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_phone.xml"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_firebase.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/firebase.webp"
+    },
+    {
+        "merged": "com.estholon.firebaseauthentication.app-debug-96:/drawable_ic_anonymously.webp.flat",
+        "source": "com.estholon.firebaseauthentication.app-main-98:/drawable/ic_anonymously.webp"
+    }
+]

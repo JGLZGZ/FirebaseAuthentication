@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,9 +17,12 @@ import androidx.compose.ui.unit.dp
 import com.estholon.firebaseauthentication.ui.core.components.authentication.otp.OtpCodeInput
 
 @Composable
-fun VerifyOTPScreen() {
+fun VerifyOTPScreen(
+    verifyOTP: (String) -> Unit = { _ -> }
+) {
 
     var code by rememberSaveable { mutableStateOf("") }
+    var isEnabled by rememberSaveable { mutableStateOf(false) }
 
     Column(
         modifier = Modifier.fillMaxWidth()
@@ -27,7 +31,9 @@ fun VerifyOTPScreen() {
             modifier = Modifier.weight(1f),
             value = code,
             onValueChange = { code = it },
-            onFilled = { /* Submit code */ },
+            onFilled = {
+                isEnabled = true
+            },
             isError = false,
             cellSize = 52.dp,
             cellSpacing = 10.dp,
@@ -35,10 +41,11 @@ fun VerifyOTPScreen() {
         )
 
         Button(
-            onClick = { /* Handle OTP submission */ },
-            modifier = Modifier.fillMaxWidth()
+            onClick = { verifyOTP(code) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = isEnabled
         ) {
-
+            Text("Verify OTP")
         }
     }
 }
@@ -49,6 +56,6 @@ fun VerifyOTPScreen() {
     showBackground = true
 )
 @Composable
-fun ValidateOTPScreenPreview() {
+fun VerifyOTPScreenPreview() {
     VerifyOTPScreen()
 }

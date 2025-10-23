@@ -3,14 +3,12 @@ package com.estholon.firebaseauthentication.domain.usecases.authentication.email
 import com.estholon.firebaseauthentication.domain.models.AnalyticsModel
 import com.estholon.firebaseauthentication.domain.repositories.AuthenticationRepository
 import com.estholon.firebaseauthentication.domain.usecases.analytics.SendEventUseCase
-import com.estholon.firebaseauthentication.domain.usecases.authentication.multifactor.SendVerificationEmailUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class SignUpEmailUseCaseImpl @Inject constructor(
     private val authenticationRepository: AuthenticationRepository,
-    private val sendVerificationEmailUseCase: SendVerificationEmailUseCase,
     private val sendEventUseCase: SendEventUseCase
 ) : SignUpEmailUseCase {
 
@@ -19,11 +17,12 @@ class SignUpEmailUseCaseImpl @Inject constructor(
 
         return try {
             withContext(Dispatchers.IO) {
+
                 val result = authenticationRepository.signUpEmail(email, password)
                 result.fold(
                     onSuccess = {
                         // Send verification email
-                        sendVerificationEmailUseCase()
+                        authenticationRepository.sendEmailVerification()
                         // Send statistics to analytics
                         val analyticsModel = AnalyticsModel(
                             title = "Sign Up",

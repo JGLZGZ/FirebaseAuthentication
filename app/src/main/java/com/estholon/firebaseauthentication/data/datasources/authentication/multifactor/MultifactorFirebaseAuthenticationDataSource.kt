@@ -46,10 +46,6 @@ class MultifactorFirebaseAuthenticationDataSource @Inject constructor(
             ) {
                 // Handle code sent
                 continuation.resume(verificationId)
-                GlobalScope.launch {
-                    val test = verifySmsForEnroll(verificationId, "123456")
-                    Log.d("TAG", "sendSmsForEnroll: $test")
-                }
             }
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
