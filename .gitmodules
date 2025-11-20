@@ -1,0 +1,3 @@
+[submodule "Authentication"]
+	path = Authentication
+	url = git@github.com:JGLZGZ/FirebaseAuthentication-Authentication-Module.git
