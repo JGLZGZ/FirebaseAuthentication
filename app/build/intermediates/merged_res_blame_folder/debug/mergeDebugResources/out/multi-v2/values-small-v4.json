@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-94:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/Users/david/.gradle/caches/8.11.1/transforms/89a1b69d7ee6d5f87c57f2e3d157d48f/transformed/material-1.11.0/res/values-small-v4/values-small-v4.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/27dc087212ab462caeeb4ad0323b357e/transformed/material-1.11.0/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

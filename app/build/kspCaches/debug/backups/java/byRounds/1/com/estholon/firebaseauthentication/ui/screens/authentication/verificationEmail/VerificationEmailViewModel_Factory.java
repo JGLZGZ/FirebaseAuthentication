@@ -1,13 +1,13 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.verificationEmail;
 
-import com.estholon.firebaseauthentication.domain.usecases.authentication.common.IsEmailVerifiedUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.multifactor.SendVerificationEmailUseCase;
+import com.example.authentication.domain.usecases.common.IsEmailVerifiedUseCase;
+import com.example.authentication.domain.usecases.multifactor.SendVerificationEmailUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
+import dagger.internal.Provider;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
-import javax.inject.Provider;
 
 @ScopeMetadata
 @QualifierMetadata
@@ -21,14 +21,16 @@ import javax.inject.Provider;
     "rawtypes",
     "KotlinInternal",
     "KotlinInternalInJava",
-    "cast"
+    "cast",
+    "deprecation",
+    "nullness:initialization.field.uninitialized"
 })
 public final class VerificationEmailViewModel_Factory implements Factory<VerificationEmailViewModel> {
   private final Provider<IsEmailVerifiedUseCase> isEmailVerifiedUseCaseProvider;
 
   private final Provider<SendVerificationEmailUseCase> sendVerificationEmailUseCaseProvider;
 
-  public VerificationEmailViewModel_Factory(
+  private VerificationEmailViewModel_Factory(
       Provider<IsEmailVerifiedUseCase> isEmailVerifiedUseCaseProvider,
       Provider<SendVerificationEmailUseCase> sendVerificationEmailUseCaseProvider) {
     this.isEmailVerifiedUseCaseProvider = isEmailVerifiedUseCaseProvider;

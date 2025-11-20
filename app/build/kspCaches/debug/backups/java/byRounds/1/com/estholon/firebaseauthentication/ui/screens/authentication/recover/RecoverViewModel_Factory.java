@@ -1,13 +1,13 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.recover;
 
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.IsEmailValidUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.ResetPasswordUseCase;
+import com.example.authentication.domain.usecases.email.IsEmailValidUseCase;
+import com.example.authentication.domain.usecases.email.ResetPasswordUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
+import dagger.internal.Provider;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
-import javax.inject.Provider;
 
 @ScopeMetadata
 @QualifierMetadata
@@ -21,14 +21,16 @@ import javax.inject.Provider;
     "rawtypes",
     "KotlinInternal",
     "KotlinInternalInJava",
-    "cast"
+    "cast",
+    "deprecation",
+    "nullness:initialization.field.uninitialized"
 })
 public final class RecoverViewModel_Factory implements Factory<RecoverViewModel> {
   private final Provider<ResetPasswordUseCase> resetPasswordUseCaseProvider;
 
   private final Provider<IsEmailValidUseCase> isEmailValidUseCaseProvider;
 
-  public RecoverViewModel_Factory(Provider<ResetPasswordUseCase> resetPasswordUseCaseProvider,
+  private RecoverViewModel_Factory(Provider<ResetPasswordUseCase> resetPasswordUseCaseProvider,
       Provider<IsEmailValidUseCase> isEmailValidUseCaseProvider) {
     this.resetPasswordUseCaseProvider = resetPasswordUseCaseProvider;
     this.isEmailValidUseCaseProvider = isEmailValidUseCaseProvider;

@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.google.services) apply false
     // FIREBASE
     alias(libs.plugins.crashlytics) apply false
-    // COMPOSE COMPILERD
+    // COMPOSE COMPILER
     alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.android.library) apply false
 }

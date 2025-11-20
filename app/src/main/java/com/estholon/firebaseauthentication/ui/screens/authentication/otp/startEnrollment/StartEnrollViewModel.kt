@@ -5,9 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.estholon.firebaseauthentication.domain.usecases.authentication.multifactor.StartEnrollPhoneUseCase
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.models.StartEnrollEvent
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.models.StartEnrollState
+import com.example.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

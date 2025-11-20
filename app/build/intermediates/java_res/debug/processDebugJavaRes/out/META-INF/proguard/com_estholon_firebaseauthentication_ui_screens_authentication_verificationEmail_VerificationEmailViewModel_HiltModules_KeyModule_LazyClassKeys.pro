@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class com.estholon.firebaseauthentication.ui.screens.authentication.verificationEmail.VerificationEmailViewModel

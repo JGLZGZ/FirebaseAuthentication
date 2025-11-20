@@ -1,6 +1,6 @@
-package com.estholon.firebaseauthentication.domain.usecases.analytics
+package com.estholon.analytics.domain.usecases
 
-import com.estholon.firebaseauthentication.domain.models.AnalyticsModel
+import com.estholon.analytics.domain.models.AnalyticsModel
 
 interface SendEventUseCase {
 

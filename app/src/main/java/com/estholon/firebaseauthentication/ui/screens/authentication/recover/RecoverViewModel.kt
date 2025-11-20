@@ -2,10 +2,10 @@ package com.estholon.firebaseauthentication.ui.screens.authentication.recover
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.IsEmailValidUseCase
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.ResetPasswordUseCase
 import com.estholon.firebaseauthentication.ui.screens.authentication.recover.models.RecoverEvent
 import com.estholon.firebaseauthentication.ui.screens.authentication.recover.models.RecoverState
+import com.example.authentication.domain.usecases.email.IsEmailValidUseCase
+import com.example.authentication.domain.usecases.email.ResetPasswordUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

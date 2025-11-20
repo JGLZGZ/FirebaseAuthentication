@@ -1,6 +1,5 @@
 package com.estholon.firebaseauthentication.data.repositories
 
-import android.app.Activity
 import com.estholon.firebaseauthentication.data.datasources.authentication.anonymously.AnonymouslyAuthenticationDataSource
 import com.estholon.firebaseauthentication.data.datasources.authentication.common.CommonAuthenticationDataSource
 import com.estholon.firebaseauthentication.data.datasources.authentication.email.EmailAuthenticationDataSource

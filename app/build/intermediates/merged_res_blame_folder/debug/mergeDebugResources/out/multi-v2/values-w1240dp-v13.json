@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-94:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/david/Documents/david-work/clases/FirebaseAuthentication/app/src/main/res/values-w1240dp/dimens.xml",
+                    "source": "/Users/jorgegimenolatas/Projects/AndroidProjects/FirebaseProject/FirebaseAuthentication/app/src/main/res/values-w1240dp/dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "6",

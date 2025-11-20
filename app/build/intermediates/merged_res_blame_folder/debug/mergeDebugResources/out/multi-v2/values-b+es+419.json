@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-94:/values-b+es+419/values-b+es+419.xml",
+            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-b+es+419/values-b+es+419.xml",
             "map": [
                 {
-                    "source": "/Users/david/.gradle/caches/8.11.1/transforms/89a1b69d7ee6d5f87c57f2e3d157d48f/transformed/material-1.11.0/res/values-b+es+419/values-b+es+419.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/27dc087212ab462caeeb4ad0323b357e/transformed/material-1.11.0/res/values-b+es+419/values-b+es+419.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

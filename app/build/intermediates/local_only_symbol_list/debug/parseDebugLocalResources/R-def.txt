@@ -20,9 +20,6 @@ mipmap ic_launcher_round
 string app_name
 string com.google.firebase.crashlytics.mapping_file_id
 string default_web_client_id
-string facebook_app_id
-string facebook_client_token
-string fb_login_protocol_scheme
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id

@@ -1,12 +1,12 @@
 package com.estholon.firebaseauthentication.ui.screens.splash;
 
-import com.estholon.firebaseauthentication.domain.usecases.authentication.common.IsUserLoggedUseCaseImpl;
+import com.example.authentication.domain.usecases.common.IsUserLoggedUseCaseImpl;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
+import dagger.internal.Provider;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
-import javax.inject.Provider;
 
 @ScopeMetadata
 @QualifierMetadata
@@ -20,12 +20,14 @@ import javax.inject.Provider;
     "rawtypes",
     "KotlinInternal",
     "KotlinInternalInJava",
-    "cast"
+    "cast",
+    "deprecation",
+    "nullness:initialization.field.uninitialized"
 })
 public final class SplashViewModel_Factory implements Factory<SplashViewModel> {
   private final Provider<IsUserLoggedUseCaseImpl> isUserLoggedUseCaseImplProvider;
 
-  public SplashViewModel_Factory(
+  private SplashViewModel_Factory(
       Provider<IsUserLoggedUseCaseImpl> isUserLoggedUseCaseImplProvider) {
     this.isUserLoggedUseCaseImplProvider = isUserLoggedUseCaseImplProvider;
   }

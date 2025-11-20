@@ -1,23 +1,23 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.signUp;
 
-import com.estholon.firebaseauthentication.domain.usecases.authentication.anonymously.SignInAnonymouslyUseCaseImpl;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.IsEmailValidUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.IsPasswordValidUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.SignUpEmailUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.facebook.SignInFacebookUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.github.SignInGitHubUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.google.ClearCredentialStateUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.google.SignInGoogleCredentialManagerUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.google.SignInGoogleUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.microsoft.SignInMicrosoftUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.twitter.SignInTwitterUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.yahoo.SignInYahooUseCase;
+import com.example.authentication.domain.usecases.anonymously.SignInAnonymouslyUseCaseImpl;
+import com.example.authentication.domain.usecases.email.IsEmailValidUseCase;
+import com.example.authentication.domain.usecases.email.IsPasswordValidUseCase;
+import com.example.authentication.domain.usecases.email.SignUpEmailUseCase;
+import com.example.authentication.domain.usecases.facebook.SignInFacebookUseCase;
+import com.example.authentication.domain.usecases.github.SignInGitHubUseCase;
+import com.example.authentication.domain.usecases.google.ClearCredentialStateUseCase;
+import com.example.authentication.domain.usecases.google.SignInGoogleCredentialManagerUseCase;
+import com.example.authentication.domain.usecases.google.SignInGoogleUseCase;
+import com.example.authentication.domain.usecases.microsoft.SignInMicrosoftUseCase;
+import com.example.authentication.domain.usecases.twitter.SignInTwitterUseCase;
+import com.example.authentication.domain.usecases.yahoo.SignInYahooUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
+import dagger.internal.Provider;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
-import javax.inject.Provider;
 
 @ScopeMetadata
 @QualifierMetadata
@@ -31,7 +31,9 @@ import javax.inject.Provider;
     "rawtypes",
     "KotlinInternal",
     "KotlinInternalInJava",
-    "cast"
+    "cast",
+    "deprecation",
+    "nullness:initialization.field.uninitialized"
 })
 public final class SignUpViewModel_Factory implements Factory<SignUpViewModel> {
   private final Provider<SignUpEmailUseCase> signUpEmailUseCaseProvider;
@@ -58,7 +60,7 @@ public final class SignUpViewModel_Factory implements Factory<SignUpViewModel> {
 
   private final Provider<IsPasswordValidUseCase> isPasswordValidUseCaseProvider;
 
-  public SignUpViewModel_Factory(Provider<SignUpEmailUseCase> signUpEmailUseCaseProvider,
+  private SignUpViewModel_Factory(Provider<SignUpEmailUseCase> signUpEmailUseCaseProvider,
       Provider<SignInAnonymouslyUseCaseImpl> signInAnonymouslyUseCaseImplProvider,
       Provider<SignInFacebookUseCase> signInFacebookUseCaseProvider,
       Provider<SignInGoogleCredentialManagerUseCase> signInGoogleCredentialManagerUseCaseProvider,

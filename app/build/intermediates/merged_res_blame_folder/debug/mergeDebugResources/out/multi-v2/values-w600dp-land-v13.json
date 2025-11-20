@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-94:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-w600dp-land-v13/values-w600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/david/.gradle/caches/8.11.1/transforms/89a1b69d7ee6d5f87c57f2e3d157d48f/transformed/material-1.11.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/27dc087212ab462caeeb4ad0323b357e/transformed/material-1.11.0/res/values-w600dp-land-v13/values-w600dp-land-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

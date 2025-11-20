@@ -1,4 +1,5 @@
-com.estholon.firebaseauthentication.debug:xml/backup_rules = 0x7f130000
+com.estholon.firebaseauthentication.debug:xml/backup_rules = 0x7f130001
+com.estholon.firebaseauthentication.debug:xml/ad_services_config = 0x7f130000
 com.estholon.firebaseauthentication.debug:styleable/include = 0x7f1200af
 com.estholon.firebaseauthentication.debug:styleable/com_facebook_login_view = 0x7f1200ad
 com.estholon.firebaseauthentication.debug:styleable/com_facebook_like_view = 0x7f1200ac
@@ -1551,7 +1552,7 @@ com.estholon.firebaseauthentication.debug:id/contiguous = 0x7f08009a
 com.estholon.firebaseauthentication.debug:id/constraint = 0x7f080095
 com.estholon.firebaseauthentication.debug:id/confirmation_code = 0x7f080094
 com.estholon.firebaseauthentication.debug:id/compress = 0x7f080092
-com.estholon.firebaseauthentication.debug:xml/data_extraction_rules = 0x7f130001
+com.estholon.firebaseauthentication.debug:xml/data_extraction_rules = 0x7f130002
 com.estholon.firebaseauthentication.debug:id/com_facebook_tooltip_bubble_view_top_pointer = 0x7f080090
 com.estholon.firebaseauthentication.debug:id/com_facebook_tooltip_bubble_view_bottom_pointer = 0x7f08008e
 com.estholon.firebaseauthentication.debug:id/com_facebook_login_fragment_progress_bar = 0x7f08008b
@@ -2727,7 +2728,7 @@ com.estholon.firebaseauthentication.debug:drawable/abc_seekbar_tick_mark_materia
 com.estholon.firebaseauthentication.debug:drawable/ic_call_answer = 0x7f0700b2
 com.estholon.firebaseauthentication.debug:dimen/m3_comp_elevated_card_container_elevation = 0x7f06011e
 com.estholon.firebaseauthentication.debug:color/mtrl_switch_track_tint = 0x7f0502fb
-com.estholon.firebaseauthentication.debug:xml/image_share_filepaths = 0x7f130002
+com.estholon.firebaseauthentication.debug:xml/image_share_filepaths = 0x7f130003
 com.estholon.firebaseauthentication.debug:color/mtrl_switch_track_decoration_tint = 0x7f0502fa
 com.estholon.firebaseauthentication.debug:color/material_personalized_color_primary_text = 0x7f0502aa
 com.estholon.firebaseauthentication.debug:color/mtrl_switch_thumb_icon_tint = 0x7f0502f8

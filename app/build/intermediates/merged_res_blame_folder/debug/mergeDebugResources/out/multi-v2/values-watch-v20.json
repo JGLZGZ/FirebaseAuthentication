@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-94:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/david/.gradle/caches/8.11.1/transforms/be879458b43c2b5c7c1d4422eea2f3c6/transformed/play-services-auth-21.1.1/res/values-watch-v20/values.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/d318af18c52ef50235b500e29bd5b97f/transformed/play-services-auth-21.1.1/res/values-watch-v20/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/david/.gradle/caches/8.11.1/transforms/ae8fa6c27b9d89218f1de1c94518b012/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/bbaa6b32f773e179c58ff970da45c76b/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

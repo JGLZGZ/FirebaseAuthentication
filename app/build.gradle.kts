@@ -66,6 +66,12 @@ android {
 
 dependencies {
 
+    //implementation(files("libs/authentication-release.aar"))
+
+    // PROJECTS
+
+    implementation(project(":authentication"))
+
     // FIREBASE
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
@@ -75,21 +81,21 @@ dependencies {
 
     // GOOGLE
     implementation("com.google.android.gms:play-services-auth:20.7.0")
-    implementation ("androidx.credentials:credentials:1.3.0")
-    implementation ("androidx.credentials:credentials-play-services-auth:1.3.0")
-    implementation ("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+    implementation("androidx.credentials:credentials:1.3.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.3.0")
+    implementation(libs.googleid)
 
     // FACEBOOK
-    implementation("com.facebook.android:facebook-login:16.2.0")
+    implementation(libs.facebook.login)
 
     // Hilt
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
 
     // HILT
-    implementation("com.google.dagger:hilt-android:2.51")
+    implementation(libs.hilt.android)
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    ksp("com.google.dagger:hilt-compiler:2.51")
+    ksp(libs.hilt.compiler)
 
 
     // PIN VIEW

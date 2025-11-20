@@ -1,6 +1,6 @@
 package com.estholon.firebaseauthentication;
 
-import com.estholon.firebaseauthentication.di.FirebaseModule;
+import com.estholon.analytics.di.FirebaseAnalyticsModule;
 import com.estholon.firebaseauthentication.ui.screens.MainActivity_GeneratedInjector;
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.StartEnrollViewModel_HiltModules;
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.VerifyOTPViewModel_HiltModules;
@@ -10,6 +10,7 @@ import com.estholon.firebaseauthentication.ui.screens.authentication.signUp.Sign
 import com.estholon.firebaseauthentication.ui.screens.authentication.verificationEmail.VerificationEmailViewModel_HiltModules;
 import com.estholon.firebaseauthentication.ui.screens.home.HomeViewModel_HiltModules;
 import com.estholon.firebaseauthentication.ui.screens.splash.SplashViewModel_HiltModules;
+import com.example.authentication.di.FirebaseModule;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -40,7 +41,7 @@ import dagger.hilt.android.internal.managers.FragmentComponentManager;
 import dagger.hilt.android.internal.managers.HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedComponentBuilderEntryPoint;
 import dagger.hilt.android.internal.managers.HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedLifecycleEntryPoint;
 import dagger.hilt.android.internal.managers.HiltWrapper_ActivityRetainedComponentManager_LifecycleModule;
-import dagger.hilt.android.internal.managers.HiltWrapper_SavedStateHandleModule;
+import dagger.hilt.android.internal.managers.HiltWrapper_ActivitySavedStateHandleModule;
 import dagger.hilt.android.internal.managers.ServiceComponentManager;
 import dagger.hilt.android.internal.managers.ViewComponentManager;
 import dagger.hilt.android.internal.modules.ApplicationContextModule;
@@ -126,6 +127,7 @@ public final class FirebaseAuthenticationApp_HiltComponents {
   @Component(
       modules = {
           ApplicationContextModule.class,
+          FirebaseAnalyticsModule.class,
           ActivityRetainedCBuilderModule.class,
           ServiceCBuilderModule.class,
           FirebaseModule.class,
@@ -133,6 +135,7 @@ public final class FirebaseAuthenticationApp_HiltComponents {
       }
   )
   @Singleton
+  @jakarta.inject.Singleton
   public abstract static class SingletonC implements FirebaseAuthenticationApp_GeneratedInjector,
       FragmentGetContextFix.FragmentGetContextFixEntryPoint,
       HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedComponentBuilderEntryPoint,
@@ -155,7 +158,7 @@ public final class FirebaseAuthenticationApp_HiltComponents {
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
-          HiltWrapper_SavedStateHandleModule.class,
+          HiltWrapper_ActivitySavedStateHandleModule.class,
           HomeViewModel_HiltModules.KeyModule.class,
           RecoverViewModel_HiltModules.KeyModule.class,
           SignInViewModel_HiltModules.KeyModule.class,

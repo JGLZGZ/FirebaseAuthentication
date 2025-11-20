@@ -9,17 +9,14 @@ import androidx.lifecycle.ViewModelProvider;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.hilt.android.internal.managers.ActivityComponentManager;
 import dagger.hilt.android.internal.managers.SavedStateHandleHolder;
-import dagger.hilt.internal.GeneratedComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.UnsafeCasts;
 import java.lang.Object;
 import java.lang.Override;
-import javax.annotation.processing.Generated;
 
 /**
  * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
  */
-@Generated("dagger.hilt.android.processor.internal.androidentrypoint.ActivityGenerator")
 public abstract class Hilt_MainActivity extends ComponentActivity implements GeneratedComponentManagerHolder {
   private SavedStateHandleHolder savedStateHandleHolder;
 
@@ -49,11 +46,9 @@ public abstract class Hilt_MainActivity extends ComponentActivity implements Gen
   }
 
   private void initSavedStateHandleHolder() {
-    if (getApplication() instanceof GeneratedComponentManager) {
-      savedStateHandleHolder = componentManager().getSavedStateHandleHolder();
-      if (savedStateHandleHolder.isInvalid()) {
-        savedStateHandleHolder.setExtras(getDefaultViewModelCreationExtras());
-      }
+    savedStateHandleHolder = componentManager().getSavedStateHandleHolder();
+    if (savedStateHandleHolder.isInvalid()) {
+      savedStateHandleHolder.setExtras(getDefaultViewModelCreationExtras());
     }
   }
 

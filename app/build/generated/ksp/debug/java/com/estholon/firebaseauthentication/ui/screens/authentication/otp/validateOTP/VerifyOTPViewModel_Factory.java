@@ -1,12 +1,12 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP;
 
-import com.estholon.firebaseauthentication.domain.repositories.AuthenticationRepository;
+import com.example.authentication.domain.repositories.AuthenticationRepository;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
+import dagger.internal.Provider;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
-import javax.inject.Provider;
 
 @ScopeMetadata
 @QualifierMetadata
@@ -20,12 +20,14 @@ import javax.inject.Provider;
     "rawtypes",
     "KotlinInternal",
     "KotlinInternalInJava",
-    "cast"
+    "cast",
+    "deprecation",
+    "nullness:initialization.field.uninitialized"
 })
 public final class VerifyOTPViewModel_Factory implements Factory<VerifyOTPViewModel> {
   private final Provider<AuthenticationRepository> authenticationRepositoryProvider;
 
-  public VerifyOTPViewModel_Factory(
+  private VerifyOTPViewModel_Factory(
       Provider<AuthenticationRepository> authenticationRepositoryProvider) {
     this.authenticationRepositoryProvider = authenticationRepositoryProvider;
   }

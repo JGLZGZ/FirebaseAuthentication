@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-94:/values-v28/values-v28.xml",
+            "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "/Users/david/.gradle/caches/8.11.1/transforms/ae8fa6c27b9d89218f1de1c94518b012/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/bbaa6b32f773e179c58ff970da45c76b/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/david/.gradle/caches/8.11.1/transforms/89a1b69d7ee6d5f87c57f2e3d157d48f/transformed/material-1.11.0/res/values-v28/values-v28.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/27dc087212ab462caeeb4ad0323b357e/transformed/material-1.11.0/res/values-v28/values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",

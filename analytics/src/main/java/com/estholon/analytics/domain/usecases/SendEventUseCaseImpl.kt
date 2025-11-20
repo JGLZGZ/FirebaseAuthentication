@@ -1,7 +1,7 @@
-package com.estholon.firebaseauthentication.domain.usecases.analytics
+package com.estholon.analytics.domain.usecases
 
-import com.estholon.firebaseauthentication.domain.models.AnalyticsModel
-import com.estholon.firebaseauthentication.domain.repositories.AnalyticsRepository
+import com.estholon.analytics.domain.models.AnalyticsModel
+import com.estholon.analytics.domain.repositories.AnalyticsRepository
 import javax.inject.Inject
 
 class SendEventUseCaseImpl @Inject constructor(

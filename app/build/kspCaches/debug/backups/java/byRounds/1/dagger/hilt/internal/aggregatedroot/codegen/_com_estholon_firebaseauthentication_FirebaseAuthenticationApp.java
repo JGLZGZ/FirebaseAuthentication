@@ -2,7 +2,6 @@ package dagger.hilt.internal.aggregatedroot.codegen;
 
 import dagger.hilt.android.HiltAndroidApp;
 import dagger.hilt.internal.aggregatedroot.AggregatedRoot;
-import javax.annotation.processing.Generated;
 
 /**
  * This class should only be referenced by generated code! This class aggregates information across multiple compilations.
@@ -13,9 +12,10 @@ import javax.annotation.processing.Generated;
     originatingRoot = "com.estholon.firebaseauthentication.FirebaseAuthenticationApp",
     originatingRootPackage = "com.estholon.firebaseauthentication",
     rootAnnotation = HiltAndroidApp.class,
+    rootComponentPackage = "dagger.hilt.components",
     rootSimpleNames = "FirebaseAuthenticationApp",
-    originatingRootSimpleNames = "FirebaseAuthenticationApp"
+    originatingRootSimpleNames = "FirebaseAuthenticationApp",
+    rootComponentSimpleNames = "SingletonComponent"
 )
-@Generated("dagger.hilt.processor.internal.root.AggregatedRootGenerator")
 public class _com_estholon_firebaseauthentication_FirebaseAuthenticationApp {
 }

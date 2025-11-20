@@ -1,6 +1,6 @@
-package com.estholon.firebaseauthentication.data.datasources.analytics
+package com.estholon.analytics.data.datasources
 
-import com.estholon.firebaseauthentication.data.dtos.AnalyticsDto
+import com.estholon.analytics.data.dtos.AnalyticsDto
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.analytics.logEvent
 import javax.inject.Inject

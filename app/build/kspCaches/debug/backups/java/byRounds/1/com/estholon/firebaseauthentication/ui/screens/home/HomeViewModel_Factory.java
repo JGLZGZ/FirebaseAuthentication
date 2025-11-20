@@ -1,21 +1,21 @@
 package com.estholon.firebaseauthentication.ui.screens.home;
 
-import com.estholon.firebaseauthentication.domain.usecases.authentication.common.SignOutUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.IsEmailValidUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.IsPasswordValidUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.email.LinkEmailUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.facebook.LinkFacebookUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.github.LinkGitHubUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.google.LinkGoogleUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.microsoft.LinkMicrosoftUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.twitter.LinkTwitterUseCase;
-import com.estholon.firebaseauthentication.domain.usecases.authentication.yahoo.LinkYahooUseCase;
+import com.example.authentication.domain.usecases.common.SignOutUseCase;
+import com.example.authentication.domain.usecases.email.IsEmailValidUseCase;
+import com.example.authentication.domain.usecases.email.IsPasswordValidUseCase;
+import com.example.authentication.domain.usecases.email.LinkEmailUseCase;
+import com.example.authentication.domain.usecases.facebook.LinkFacebookUseCase;
+import com.example.authentication.domain.usecases.github.LinkGitHubUseCase;
+import com.example.authentication.domain.usecases.google.LinkGoogleUseCase;
+import com.example.authentication.domain.usecases.microsoft.LinkMicrosoftUseCase;
+import com.example.authentication.domain.usecases.twitter.LinkTwitterUseCase;
+import com.example.authentication.domain.usecases.yahoo.LinkYahooUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
+import dagger.internal.Provider;
 import dagger.internal.QualifierMetadata;
 import dagger.internal.ScopeMetadata;
 import javax.annotation.processing.Generated;
-import javax.inject.Provider;
 
 @ScopeMetadata
 @QualifierMetadata
@@ -29,7 +29,9 @@ import javax.inject.Provider;
     "rawtypes",
     "KotlinInternal",
     "KotlinInternalInJava",
-    "cast"
+    "cast",
+    "deprecation",
+    "nullness:initialization.field.uninitialized"
 })
 public final class HomeViewModel_Factory implements Factory<HomeViewModel> {
   private final Provider<SignOutUseCase> signOutUseCaseProvider;
@@ -52,7 +54,7 @@ public final class HomeViewModel_Factory implements Factory<HomeViewModel> {
 
   private final Provider<LinkTwitterUseCase> linkTwitterUseCaseProvider;
 
-  public HomeViewModel_Factory(Provider<SignOutUseCase> signOutUseCaseProvider,
+  private HomeViewModel_Factory(Provider<SignOutUseCase> signOutUseCaseProvider,
       Provider<IsEmailValidUseCase> isEmailValidUseCaseProvider,
       Provider<IsPasswordValidUseCase> isPasswordValidUseCaseProvider,
       Provider<LinkEmailUseCase> linkEmailUseCaseProvider,
