@@ -1,7 +1,7 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.recover;
 
-import com.example.authentication.domain.usecases.email.IsEmailValidUseCase;
-import com.example.authentication.domain.usecases.email.ResetPasswordUseCase;
+import com.estholon.authentication.domain.usecases.email.IsEmailValidUseCase;
+import com.estholon.authentication.domain.usecases.email.ResetPasswordUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Provider;

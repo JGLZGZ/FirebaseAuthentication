@@ -1,6 +1,6 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment;
 
-import com.example.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCase;
+import com.estholon.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Provider;

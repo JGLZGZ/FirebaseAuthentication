@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.analytics"
+    namespace = "com.estholon.analytics"
     compileSdk = 36
 
     defaultConfig {

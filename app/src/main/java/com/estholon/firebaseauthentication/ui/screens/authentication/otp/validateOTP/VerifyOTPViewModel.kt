@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.models.VerifyOTPEvent
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.models.VerifyOTPState
-import com.example.authentication.domain.repositories.AuthenticationRepository
+import com.estholon.authentication.domain.repositories.AuthenticationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

@@ -69,12 +69,10 @@ dependencies {
     //implementation(files("libs/authentication-release.aar"))
 
     // PROJECTS
-
+    implementation(project(":core"))
     implementation(project(":authentication"))
 
     // FIREBASE
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)

@@ -1,15 +1,15 @@
 package com.estholon.firebaseauthentication.ui.screens.home;
 
-import com.example.authentication.domain.usecases.common.SignOutUseCase;
-import com.example.authentication.domain.usecases.email.IsEmailValidUseCase;
-import com.example.authentication.domain.usecases.email.IsPasswordValidUseCase;
-import com.example.authentication.domain.usecases.email.LinkEmailUseCase;
-import com.example.authentication.domain.usecases.facebook.LinkFacebookUseCase;
-import com.example.authentication.domain.usecases.github.LinkGitHubUseCase;
-import com.example.authentication.domain.usecases.google.LinkGoogleUseCase;
-import com.example.authentication.domain.usecases.microsoft.LinkMicrosoftUseCase;
-import com.example.authentication.domain.usecases.twitter.LinkTwitterUseCase;
-import com.example.authentication.domain.usecases.yahoo.LinkYahooUseCase;
+import com.estholon.authentication.domain.usecases.common.SignOutUseCase;
+import com.estholon.authentication.domain.usecases.email.IsEmailValidUseCase;
+import com.estholon.authentication.domain.usecases.email.IsPasswordValidUseCase;
+import com.estholon.authentication.domain.usecases.email.LinkEmailUseCase;
+import com.estholon.authentication.domain.usecases.facebook.LinkFacebookUseCase;
+import com.estholon.authentication.domain.usecases.github.LinkGitHubUseCase;
+import com.estholon.authentication.domain.usecases.google.LinkGoogleUseCase;
+import com.estholon.authentication.domain.usecases.microsoft.LinkMicrosoftUseCase;
+import com.estholon.authentication.domain.usecases.twitter.LinkTwitterUseCase;
+import com.estholon.authentication.domain.usecases.yahoo.LinkYahooUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Provider;

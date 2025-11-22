@@ -1,7 +1,7 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.verificationEmail;
 
-import com.example.authentication.domain.usecases.common.IsEmailVerifiedUseCase;
-import com.example.authentication.domain.usecases.multifactor.SendVerificationEmailUseCase;
+import com.estholon.authentication.domain.usecases.common.IsEmailVerifiedUseCase;
+import com.estholon.authentication.domain.usecases.multifactor.SendVerificationEmailUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Provider;

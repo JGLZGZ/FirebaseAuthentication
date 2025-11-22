@@ -1,6 +1,6 @@
 package com.estholon.firebaseauthentication.ui.features.auth
 
-import com.estholon.firebaseauthentication.domain.usecases.authentication.multifactor.StartEnrollPhoneUseCase
+import com.estholon.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCase
 import com.estholon.firebaseauthentication.ui.core.helpers.eventually
 import com.estholon.firebaseauthentication.ui.core.rules.MainDispatcherRule
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.StartEnrollViewModel

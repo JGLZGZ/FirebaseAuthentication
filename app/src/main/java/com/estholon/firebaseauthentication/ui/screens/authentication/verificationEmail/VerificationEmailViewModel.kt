@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.estholon.firebaseauthentication.ui.screens.authentication.verificationEmail.models.VerificationEmailEvent
 import com.estholon.firebaseauthentication.ui.screens.authentication.verificationEmail.models.VerificationEmailState
-import com.example.authentication.domain.usecases.common.IsEmailVerifiedUseCase
-import com.example.authentication.domain.usecases.multifactor.SendVerificationEmailUseCase
+import com.estholon.authentication.domain.usecases.common.IsEmailVerifiedUseCase
+import com.estholon.authentication.domain.usecases.multifactor.SendVerificationEmailUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

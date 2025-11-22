@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.estholon.firebaseauthentication.ui.screens.splash.models.SplashEvent
 import com.estholon.firebaseauthentication.ui.screens.splash.models.SplashState
-import com.example.authentication.domain.usecases.common.IsUserLoggedUseCaseImpl
+import com.estholon.authentication.domain.usecases.common.IsUserLoggedUseCaseImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

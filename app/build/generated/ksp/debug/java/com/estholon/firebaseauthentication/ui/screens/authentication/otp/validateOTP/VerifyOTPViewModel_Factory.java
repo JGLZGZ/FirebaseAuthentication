@@ -1,6 +1,6 @@
 package com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP;
 
-import com.example.authentication.domain.repositories.AuthenticationRepository;
+import com.estholon.authentication.domain.repositories.AuthenticationRepository;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Provider;

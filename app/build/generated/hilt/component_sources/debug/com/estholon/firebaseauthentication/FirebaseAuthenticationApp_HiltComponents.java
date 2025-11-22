@@ -1,6 +1,7 @@
 package com.estholon.firebaseauthentication;
 
 import com.estholon.analytics.di.FirebaseAnalyticsModule;
+import com.estholon.authentication.di.FirebaseModule;
 import com.estholon.firebaseauthentication.ui.screens.MainActivity_GeneratedInjector;
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.StartEnrollViewModel_HiltModules;
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.validateOTP.VerifyOTPViewModel_HiltModules;
@@ -10,7 +11,6 @@ import com.estholon.firebaseauthentication.ui.screens.authentication.signUp.Sign
 import com.estholon.firebaseauthentication.ui.screens.authentication.verificationEmail.VerificationEmailViewModel_HiltModules;
 import com.estholon.firebaseauthentication.ui.screens.home.HomeViewModel_HiltModules;
 import com.estholon.firebaseauthentication.ui.screens.splash.SplashViewModel_HiltModules;
-import com.example.authentication.di.FirebaseModule;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;

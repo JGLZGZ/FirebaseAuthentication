@@ -1,6 +1,6 @@
 package com.estholon.firebaseauthentication.ui.screens.splash;
 
-import com.example.authentication.domain.usecases.common.IsUserLoggedUseCaseImpl;
+import com.estholon.authentication.domain.usecases.common.IsUserLoggedUseCaseImpl;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Provider;

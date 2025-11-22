@@ -15,6 +15,84 @@ import com.estholon.analytics.di.FirebaseAnalyticsModule_Companion_ProvideFireba
 import com.estholon.analytics.domain.repositories.AnalyticsRepository;
 import com.estholon.analytics.domain.usecases.SendEventUseCase;
 import com.estholon.analytics.domain.usecases.SendEventUseCaseImpl;
+import com.estholon.authentication.data.datasources.anonymously.AnonymouslyAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.anonymously.AnonymouslyFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.common.CommonAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.common.CommonFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.email.EmailAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.email.EmailFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.facebook.FacebookAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.facebook.FacebookFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.github.GitHubAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.github.GitHubFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.google.GoogleAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.google.GoogleFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.microsoft.MicrosoftAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.microsoft.MicrosoftFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.multifactor.MultifactorAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.multifactor.MultifactorFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.phone.PhoneAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.phone.PhoneFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.twitter.TwitterAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.twitter.TwitterFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.yahoo.YahooAuthenticationDataSource;
+import com.estholon.authentication.data.datasources.yahoo.YahooFirebaseAuthenticationDataSource;
+import com.estholon.authentication.data.mappers.UserMapper;
+import com.estholon.authentication.data.repositories.AuthenticationRepositoryImpl;
+import com.estholon.authentication.di.FirebaseModule_Companion_ProvideFirebaseAuthFactory;
+import com.estholon.authentication.di.FirebaseModule_Companion_ProvideUserMapperFactory;
+import com.estholon.authentication.domain.repositories.AuthenticationRepository;
+import com.estholon.authentication.domain.usecases.anonymously.SignInAnonymouslyUseCase;
+import com.estholon.authentication.domain.usecases.anonymously.SignInAnonymouslyUseCaseImpl;
+import com.estholon.authentication.domain.usecases.common.IsEmailVerifiedUseCase;
+import com.estholon.authentication.domain.usecases.common.IsEmailVerifiedUseCaseImpl;
+import com.estholon.authentication.domain.usecases.common.IsUserLoggedUseCaseImpl;
+import com.estholon.authentication.domain.usecases.common.SignOutUseCase;
+import com.estholon.authentication.domain.usecases.common.SignOutUseCaseImpl;
+import com.estholon.authentication.domain.usecases.email.IsEmailValidUseCase;
+import com.estholon.authentication.domain.usecases.email.IsEmailValidUseCaseImpl;
+import com.estholon.authentication.domain.usecases.email.IsPasswordValidUseCase;
+import com.estholon.authentication.domain.usecases.email.IsPasswordValidUseCaseImpl;
+import com.estholon.authentication.domain.usecases.email.LinkEmailUseCase;
+import com.estholon.authentication.domain.usecases.email.LinkEmailUseCaseImpl;
+import com.estholon.authentication.domain.usecases.email.ResetPasswordUseCase;
+import com.estholon.authentication.domain.usecases.email.ResetPasswordUseCaseImpl;
+import com.estholon.authentication.domain.usecases.email.SignInEmailUseCase;
+import com.estholon.authentication.domain.usecases.email.SignInEmailUseCaseImpl;
+import com.estholon.authentication.domain.usecases.email.SignUpEmailUseCase;
+import com.estholon.authentication.domain.usecases.email.SignUpEmailUseCaseImpl;
+import com.estholon.authentication.domain.usecases.facebook.LinkFacebookUseCase;
+import com.estholon.authentication.domain.usecases.facebook.LinkFacebookUseCaseImpl;
+import com.estholon.authentication.domain.usecases.facebook.SignInFacebookUseCase;
+import com.estholon.authentication.domain.usecases.facebook.SignInFacebookUseCaseImpl;
+import com.estholon.authentication.domain.usecases.github.LinkGitHubUseCase;
+import com.estholon.authentication.domain.usecases.github.LinkGitHubUseCaseImpl;
+import com.estholon.authentication.domain.usecases.github.SignInGitHubUseCase;
+import com.estholon.authentication.domain.usecases.github.SignInGitHubUseCaseImpl;
+import com.estholon.authentication.domain.usecases.google.ClearCredentialStateUseCase;
+import com.estholon.authentication.domain.usecases.google.ClearCredentialStateUseCaseImpl;
+import com.estholon.authentication.domain.usecases.google.LinkGoogleUseCase;
+import com.estholon.authentication.domain.usecases.google.LinkGoogleUseCaseImpl;
+import com.estholon.authentication.domain.usecases.google.SignInGoogleCredentialManagerUseCase;
+import com.estholon.authentication.domain.usecases.google.SignInGoogleCredentialManagerUseCaseImpl;
+import com.estholon.authentication.domain.usecases.google.SignInGoogleUseCase;
+import com.estholon.authentication.domain.usecases.google.SignInGoogleUseCaseImpl;
+import com.estholon.authentication.domain.usecases.microsoft.LinkMicrosoftUseCase;
+import com.estholon.authentication.domain.usecases.microsoft.LinkMicrosoftUseCaseImpl;
+import com.estholon.authentication.domain.usecases.microsoft.SignInMicrosoftUseCase;
+import com.estholon.authentication.domain.usecases.microsoft.SignInMicrosoftUseCaseImpl;
+import com.estholon.authentication.domain.usecases.multifactor.SendVerificationEmailUseCase;
+import com.estholon.authentication.domain.usecases.multifactor.SendVerificationEmailUseCaseImpl;
+import com.estholon.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCase;
+import com.estholon.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCaseImpl;
+import com.estholon.authentication.domain.usecases.twitter.LinkTwitterUseCase;
+import com.estholon.authentication.domain.usecases.twitter.LinkTwitterUseCaseImpl;
+import com.estholon.authentication.domain.usecases.twitter.SignInTwitterUseCase;
+import com.estholon.authentication.domain.usecases.twitter.SignInTwitterUseCaseImpl;
+import com.estholon.authentication.domain.usecases.yahoo.LinkYahooUseCase;
+import com.estholon.authentication.domain.usecases.yahoo.LinkYahooUseCaseImpl;
+import com.estholon.authentication.domain.usecases.yahoo.SignInYahooUseCase;
+import com.estholon.authentication.domain.usecases.yahoo.SignInYahooUseCaseImpl;
 import com.estholon.firebaseauthentication.ui.screens.MainActivity;
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.StartEnrollViewModel;
 import com.estholon.firebaseauthentication.ui.screens.authentication.otp.startEnrollment.StartEnrollViewModel_HiltModules;
@@ -48,84 +126,6 @@ import com.estholon.firebaseauthentication.ui.screens.splash.SplashViewModel;
 import com.estholon.firebaseauthentication.ui.screens.splash.SplashViewModel_HiltModules;
 import com.estholon.firebaseauthentication.ui.screens.splash.SplashViewModel_HiltModules_BindsModule_Binds_LazyMapKey;
 import com.estholon.firebaseauthentication.ui.screens.splash.SplashViewModel_HiltModules_KeyModule_Provide_LazyMapKey;
-import com.example.authentication.data.datasources.anonymously.AnonymouslyAuthenticationDataSource;
-import com.example.authentication.data.datasources.anonymously.AnonymouslyFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.common.CommonAuthenticationDataSource;
-import com.example.authentication.data.datasources.common.CommonFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.email.EmailAuthenticationDataSource;
-import com.example.authentication.data.datasources.email.EmailFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.facebook.FacebookAuthenticationDataSource;
-import com.example.authentication.data.datasources.facebook.FacebookFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.github.GitHubAuthenticationDataSource;
-import com.example.authentication.data.datasources.github.GitHubFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.google.GoogleAuthenticationDataSource;
-import com.example.authentication.data.datasources.google.GoogleFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.microsoft.MicrosoftAuthenticationDataSource;
-import com.example.authentication.data.datasources.microsoft.MicrosoftFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.multifactor.MultifactorAuthenticationDataSource;
-import com.example.authentication.data.datasources.multifactor.MultifactorFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.phone.PhoneAuthenticationDataSource;
-import com.example.authentication.data.datasources.phone.PhoneFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.twitter.TwitterAuthenticationDataSource;
-import com.example.authentication.data.datasources.twitter.TwitterFirebaseAuthenticationDataSource;
-import com.example.authentication.data.datasources.yahoo.YahooAuthenticationDataSource;
-import com.example.authentication.data.datasources.yahoo.YahooFirebaseAuthenticationDataSource;
-import com.example.authentication.data.mappers.UserMapper;
-import com.example.authentication.data.repositories.AuthenticationRepositoryImpl;
-import com.example.authentication.di.FirebaseModule_Companion_ProvideFirebaseAuthFactory;
-import com.example.authentication.di.FirebaseModule_Companion_ProvideUserMapperFactory;
-import com.example.authentication.domain.repositories.AuthenticationRepository;
-import com.example.authentication.domain.usecases.anonymously.SignInAnonymouslyUseCase;
-import com.example.authentication.domain.usecases.anonymously.SignInAnonymouslyUseCaseImpl;
-import com.example.authentication.domain.usecases.common.IsEmailVerifiedUseCase;
-import com.example.authentication.domain.usecases.common.IsEmailVerifiedUseCaseImpl;
-import com.example.authentication.domain.usecases.common.IsUserLoggedUseCaseImpl;
-import com.example.authentication.domain.usecases.common.SignOutUseCase;
-import com.example.authentication.domain.usecases.common.SignOutUseCaseImpl;
-import com.example.authentication.domain.usecases.email.IsEmailValidUseCase;
-import com.example.authentication.domain.usecases.email.IsEmailValidUseCaseImpl;
-import com.example.authentication.domain.usecases.email.IsPasswordValidUseCase;
-import com.example.authentication.domain.usecases.email.IsPasswordValidUseCaseImpl;
-import com.example.authentication.domain.usecases.email.LinkEmailUseCase;
-import com.example.authentication.domain.usecases.email.LinkEmailUseCaseImpl;
-import com.example.authentication.domain.usecases.email.ResetPasswordUseCase;
-import com.example.authentication.domain.usecases.email.ResetPasswordUseCaseImpl;
-import com.example.authentication.domain.usecases.email.SignInEmailUseCase;
-import com.example.authentication.domain.usecases.email.SignInEmailUseCaseImpl;
-import com.example.authentication.domain.usecases.email.SignUpEmailUseCase;
-import com.example.authentication.domain.usecases.email.SignUpEmailUseCaseImpl;
-import com.example.authentication.domain.usecases.facebook.LinkFacebookUseCase;
-import com.example.authentication.domain.usecases.facebook.LinkFacebookUseCaseImpl;
-import com.example.authentication.domain.usecases.facebook.SignInFacebookUseCase;
-import com.example.authentication.domain.usecases.facebook.SignInFacebookUseCaseImpl;
-import com.example.authentication.domain.usecases.github.LinkGitHubUseCase;
-import com.example.authentication.domain.usecases.github.LinkGitHubUseCaseImpl;
-import com.example.authentication.domain.usecases.github.SignInGitHubUseCase;
-import com.example.authentication.domain.usecases.github.SignInGitHubUseCaseImpl;
-import com.example.authentication.domain.usecases.google.ClearCredentialStateUseCase;
-import com.example.authentication.domain.usecases.google.ClearCredentialStateUseCaseImpl;
-import com.example.authentication.domain.usecases.google.LinkGoogleUseCase;
-import com.example.authentication.domain.usecases.google.LinkGoogleUseCaseImpl;
-import com.example.authentication.domain.usecases.google.SignInGoogleCredentialManagerUseCase;
-import com.example.authentication.domain.usecases.google.SignInGoogleCredentialManagerUseCaseImpl;
-import com.example.authentication.domain.usecases.google.SignInGoogleUseCase;
-import com.example.authentication.domain.usecases.google.SignInGoogleUseCaseImpl;
-import com.example.authentication.domain.usecases.microsoft.LinkMicrosoftUseCase;
-import com.example.authentication.domain.usecases.microsoft.LinkMicrosoftUseCaseImpl;
-import com.example.authentication.domain.usecases.microsoft.SignInMicrosoftUseCase;
-import com.example.authentication.domain.usecases.microsoft.SignInMicrosoftUseCaseImpl;
-import com.example.authentication.domain.usecases.multifactor.SendVerificationEmailUseCase;
-import com.example.authentication.domain.usecases.multifactor.SendVerificationEmailUseCaseImpl;
-import com.example.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCase;
-import com.example.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCaseImpl;
-import com.example.authentication.domain.usecases.twitter.LinkTwitterUseCase;
-import com.example.authentication.domain.usecases.twitter.LinkTwitterUseCaseImpl;
-import com.example.authentication.domain.usecases.twitter.SignInTwitterUseCase;
-import com.example.authentication.domain.usecases.twitter.SignInTwitterUseCaseImpl;
-import com.example.authentication.domain.usecases.yahoo.LinkYahooUseCase;
-import com.example.authentication.domain.usecases.yahoo.LinkYahooUseCaseImpl;
-import com.example.authentication.domain.usecases.yahoo.SignInYahooUseCase;
-import com.example.authentication.domain.usecases.yahoo.SignInYahooUseCaseImpl;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -1004,82 +1004,82 @@ public final class DaggerFirebaseAuthenticationApp_HiltComponents_SingletonC {
       @SuppressWarnings("unchecked")
       public T get() {
         switch (id) {
-          case 0: // com.example.authentication.domain.usecases.common.SignOutUseCaseImpl
+          case 0: // com.estholon.authentication.domain.usecases.common.SignOutUseCaseImpl
           return (T) new SignOutUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 1: // com.example.authentication.data.repositories.AuthenticationRepositoryImpl
+          case 1: // com.estholon.authentication.data.repositories.AuthenticationRepositoryImpl
           return (T) new AuthenticationRepositoryImpl(singletonCImpl.bindCommonAuthenticationDataSourceProvider.get(), singletonCImpl.bindAnonymouslyAuthenticationDataSourceProvider.get(), singletonCImpl.bindEmailAuthenticationDataSourceProvider.get(), singletonCImpl.bindGoogleAuthenticationDataSourceProvider.get(), singletonCImpl.bindFacebookAuthenticationDataSourceProvider.get(), singletonCImpl.bindGitHubAuthenticationDataSourceProvider.get(), singletonCImpl.bindMicrosoftAuthenticationDataSourceProvider.get(), singletonCImpl.bindPhoneAuthenticationDataSourceProvider.get(), singletonCImpl.bindTwitterAuthenticationDataSourceProvider.get(), singletonCImpl.bindYahooAuthenticationDataSourceProvider.get(), singletonCImpl.bindMultifactorAuthenticationDataSourceProvider.get(), singletonCImpl.provideUserMapperProvider.get());
 
-          case 2: // com.example.authentication.data.datasources.common.CommonFirebaseAuthenticationDataSource
+          case 2: // com.estholon.authentication.data.datasources.common.CommonFirebaseAuthenticationDataSource
           return (T) new CommonFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get(), singletonCImpl.bindGoogleAuthenticationDataSourceProvider.get());
 
           case 3: // com.google.firebase.auth.FirebaseAuth
           return (T) FirebaseModule_Companion_ProvideFirebaseAuthFactory.provideFirebaseAuth();
 
-          case 4: // com.example.authentication.data.datasources.google.GoogleFirebaseAuthenticationDataSource
+          case 4: // com.estholon.authentication.data.datasources.google.GoogleFirebaseAuthenticationDataSource
           return (T) new GoogleFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get(), singletonCImpl.bindEmailAuthenticationDataSourceProvider.get(), ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
 
-          case 5: // com.example.authentication.data.datasources.email.EmailFirebaseAuthenticationDataSource
+          case 5: // com.estholon.authentication.data.datasources.email.EmailFirebaseAuthenticationDataSource
           return (T) new EmailFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get(), singletonCImpl.provideUserMapperProvider.get(), ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
 
-          case 6: // com.example.authentication.data.mappers.UserMapper
+          case 6: // com.estholon.authentication.data.mappers.UserMapper
           return (T) FirebaseModule_Companion_ProvideUserMapperFactory.provideUserMapper();
 
-          case 7: // com.example.authentication.data.datasources.anonymously.AnonymouslyFirebaseAuthenticationDataSource
+          case 7: // com.estholon.authentication.data.datasources.anonymously.AnonymouslyFirebaseAuthenticationDataSource
           return (T) new AnonymouslyFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 8: // com.example.authentication.data.datasources.facebook.FacebookFirebaseAuthenticationDataSource
+          case 8: // com.estholon.authentication.data.datasources.facebook.FacebookFirebaseAuthenticationDataSource
           return (T) new FacebookFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 9: // com.example.authentication.data.datasources.github.GitHubFirebaseAuthenticationDataSource
+          case 9: // com.estholon.authentication.data.datasources.github.GitHubFirebaseAuthenticationDataSource
           return (T) new GitHubFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 10: // com.example.authentication.data.datasources.microsoft.MicrosoftFirebaseAuthenticationDataSource
+          case 10: // com.estholon.authentication.data.datasources.microsoft.MicrosoftFirebaseAuthenticationDataSource
           return (T) new MicrosoftFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 11: // com.example.authentication.data.datasources.phone.PhoneFirebaseAuthenticationDataSource
+          case 11: // com.estholon.authentication.data.datasources.phone.PhoneFirebaseAuthenticationDataSource
           return (T) new PhoneFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 12: // com.example.authentication.data.datasources.twitter.TwitterFirebaseAuthenticationDataSource
+          case 12: // com.estholon.authentication.data.datasources.twitter.TwitterFirebaseAuthenticationDataSource
           return (T) new TwitterFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 13: // com.example.authentication.data.datasources.yahoo.YahooFirebaseAuthenticationDataSource
+          case 13: // com.estholon.authentication.data.datasources.yahoo.YahooFirebaseAuthenticationDataSource
           return (T) new YahooFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 14: // com.example.authentication.data.datasources.multifactor.MultifactorFirebaseAuthenticationDataSource
+          case 14: // com.estholon.authentication.data.datasources.multifactor.MultifactorFirebaseAuthenticationDataSource
           return (T) new MultifactorFirebaseAuthenticationDataSource(singletonCImpl.provideFirebaseAuthProvider.get());
 
-          case 15: // com.example.authentication.domain.usecases.email.IsEmailValidUseCaseImpl
+          case 15: // com.estholon.authentication.domain.usecases.email.IsEmailValidUseCaseImpl
           return (T) new IsEmailValidUseCaseImpl();
 
-          case 16: // com.example.authentication.domain.usecases.email.IsPasswordValidUseCaseImpl
+          case 16: // com.estholon.authentication.domain.usecases.email.IsPasswordValidUseCaseImpl
           return (T) new IsPasswordValidUseCaseImpl();
 
-          case 17: // com.example.authentication.domain.usecases.email.LinkEmailUseCaseImpl
+          case 17: // com.estholon.authentication.domain.usecases.email.LinkEmailUseCaseImpl
           return (T) new LinkEmailUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 18: // com.example.authentication.domain.usecases.google.LinkGoogleUseCaseImpl
+          case 18: // com.estholon.authentication.domain.usecases.google.LinkGoogleUseCaseImpl
           return (T) new LinkGoogleUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 19: // com.example.authentication.domain.usecases.facebook.LinkFacebookUseCaseImpl
+          case 19: // com.estholon.authentication.domain.usecases.facebook.LinkFacebookUseCaseImpl
           return (T) new LinkFacebookUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 20: // com.example.authentication.domain.usecases.github.LinkGitHubUseCaseImpl
+          case 20: // com.estholon.authentication.domain.usecases.github.LinkGitHubUseCaseImpl
           return (T) new LinkGitHubUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 21: // com.example.authentication.domain.usecases.microsoft.LinkMicrosoftUseCaseImpl
+          case 21: // com.estholon.authentication.domain.usecases.microsoft.LinkMicrosoftUseCaseImpl
           return (T) new LinkMicrosoftUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 22: // com.example.authentication.domain.usecases.yahoo.LinkYahooUseCaseImpl
+          case 22: // com.estholon.authentication.domain.usecases.yahoo.LinkYahooUseCaseImpl
           return (T) new LinkYahooUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 23: // com.example.authentication.domain.usecases.twitter.LinkTwitterUseCaseImpl
+          case 23: // com.estholon.authentication.domain.usecases.twitter.LinkTwitterUseCaseImpl
           return (T) new LinkTwitterUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 24: // com.example.authentication.domain.usecases.email.ResetPasswordUseCaseImpl
+          case 24: // com.estholon.authentication.domain.usecases.email.ResetPasswordUseCaseImpl
           return (T) new ResetPasswordUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 25: // com.example.authentication.domain.usecases.email.SignInEmailUseCaseImpl
+          case 25: // com.estholon.authentication.domain.usecases.email.SignInEmailUseCaseImpl
           return (T) new SignInEmailUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
           case 26: // com.estholon.analytics.domain.usecases.SendEventUseCaseImpl
@@ -1097,43 +1097,43 @@ public final class DaggerFirebaseAuthenticationApp_HiltComponents_SingletonC {
           case 30: // com.estholon.analytics.data.mappers.AnalyticsMapper
           return (T) FirebaseAnalyticsModule_Companion_ProvideAnalyticsMapperFactory.provideAnalyticsMapper();
 
-          case 31: // com.example.authentication.domain.usecases.anonymously.SignInAnonymouslyUseCaseImpl
+          case 31: // com.estholon.authentication.domain.usecases.anonymously.SignInAnonymouslyUseCaseImpl
           return (T) new SignInAnonymouslyUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 32: // com.example.authentication.domain.usecases.google.SignInGoogleCredentialManagerUseCaseImpl
+          case 32: // com.estholon.authentication.domain.usecases.google.SignInGoogleCredentialManagerUseCaseImpl
           return (T) new SignInGoogleCredentialManagerUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 33: // com.example.authentication.domain.usecases.google.SignInGoogleUseCaseImpl
+          case 33: // com.estholon.authentication.domain.usecases.google.SignInGoogleUseCaseImpl
           return (T) new SignInGoogleUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendVerificationEmailUseCaseProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 34: // com.example.authentication.domain.usecases.multifactor.SendVerificationEmailUseCaseImpl
+          case 34: // com.estholon.authentication.domain.usecases.multifactor.SendVerificationEmailUseCaseImpl
           return (T) new SendVerificationEmailUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 35: // com.example.authentication.domain.usecases.facebook.SignInFacebookUseCaseImpl
+          case 35: // com.estholon.authentication.domain.usecases.facebook.SignInFacebookUseCaseImpl
           return (T) new SignInFacebookUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 36: // com.example.authentication.domain.usecases.github.SignInGitHubUseCaseImpl
+          case 36: // com.estholon.authentication.domain.usecases.github.SignInGitHubUseCaseImpl
           return (T) new SignInGitHubUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 37: // com.example.authentication.domain.usecases.microsoft.SignInMicrosoftUseCaseImpl
+          case 37: // com.estholon.authentication.domain.usecases.microsoft.SignInMicrosoftUseCaseImpl
           return (T) new SignInMicrosoftUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 38: // com.example.authentication.domain.usecases.twitter.SignInTwitterUseCaseImpl
+          case 38: // com.estholon.authentication.domain.usecases.twitter.SignInTwitterUseCaseImpl
           return (T) new SignInTwitterUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 39: // com.example.authentication.domain.usecases.yahoo.SignInYahooUseCaseImpl
+          case 39: // com.estholon.authentication.domain.usecases.yahoo.SignInYahooUseCaseImpl
           return (T) new SignInYahooUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 40: // com.example.authentication.domain.usecases.google.ClearCredentialStateUseCaseImpl
+          case 40: // com.estholon.authentication.domain.usecases.google.ClearCredentialStateUseCaseImpl
           return (T) new ClearCredentialStateUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
-          case 41: // com.example.authentication.domain.usecases.email.SignUpEmailUseCaseImpl
+          case 41: // com.estholon.authentication.domain.usecases.email.SignUpEmailUseCaseImpl
           return (T) new SignUpEmailUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 42: // com.example.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCaseImpl
+          case 42: // com.estholon.authentication.domain.usecases.multifactor.StartEnrollPhoneUseCaseImpl
           return (T) new StartEnrollPhoneUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get(), singletonCImpl.provideSendEventUseCaseProvider.get());
 
-          case 43: // com.example.authentication.domain.usecases.common.IsEmailVerifiedUseCaseImpl
+          case 43: // com.estholon.authentication.domain.usecases.common.IsEmailVerifiedUseCaseImpl
           return (T) new IsEmailVerifiedUseCaseImpl(singletonCImpl.bindAuthenticationRepositoryProvider.get());
 
           default: throw new AssertionError(id);
