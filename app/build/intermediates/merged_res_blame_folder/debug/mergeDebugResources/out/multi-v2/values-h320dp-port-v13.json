@@ -4,7 +4,7 @@
             "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-h320dp-port-v13/values-h320dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/27dc087212ab462caeeb4ad0323b357e/transformed/material-1.11.0/res/values-h320dp-port-v13/values-h320dp-port-v13.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.13/transforms/7d11c55d2bb3eaad41113cc37c1007bc/transformed/material-1.11.0/res/values-h320dp-port-v13/values-h320dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,8 +1,5 @@
 package com.estholon.firebaseauthentication.ui.screens.splash
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.estholon.firebaseauthentication.ui.screens.splash.models.SplashEvent

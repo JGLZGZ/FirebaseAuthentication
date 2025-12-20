@@ -4,7 +4,7 @@
             "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/27dc087212ab462caeeb4ad0323b357e/transformed/material-1.11.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.13/transforms/7d11c55d2bb3eaad41113cc37c1007bc/transformed/material-1.11.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

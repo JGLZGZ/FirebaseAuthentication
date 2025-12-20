@@ -4,7 +4,7 @@
             "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/bbaa6b32f773e179c58ff970da45c76b/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.13/transforms/1d78f2211b19a3d21e3da9a71421dac8/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

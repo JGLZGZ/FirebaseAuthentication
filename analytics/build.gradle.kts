@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    // TEST
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+
 }

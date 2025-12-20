@@ -37,5 +37,4 @@ dependencies {
     // FIREBASE
     api(platform(libs.firebase.bom))
 
-
 }

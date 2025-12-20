@@ -4,17 +4,7 @@
             "outputFile": "com.estholon.firebaseauthentication.app-mergeDebugResources-96:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/bbaa6b32f773e179c58ff970da45c76b/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/27dc087212ab462caeeb4ad0323b357e/transformed/material-1.11.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.13/transforms/7d11c55d2bb3eaad41113cc37c1007bc/transformed/material-1.11.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -33,7 +23,17 @@
                     }
                 },
                 {
-                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.11.1/transforms/7c29aa1b734c4515be402c72d9752b3e/transformed/media-1.0.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.13/transforms/1d78f2211b19a3d21e3da9a71421dac8/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "/Users/jorgegimenolatas/.gradle/caches/8.13/transforms/3f972ea4cadd6b2f1d710194d9908349/transformed/media-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
